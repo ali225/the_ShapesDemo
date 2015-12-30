@@ -1,0 +1,56 @@
+using ShapesDemo.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ShapesDemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "by ali gamal ";
+            TestRectangle();
+            TestSquare();
+            TestTriangle();
+        }
+
+        static void TestRectangle()
+        {
+            Rectangle rectangle = new Rectangle(10, 5);
+            DisplayShape(rectangle);
+            rectangle.Width = 20;
+            DisplayShape(rectangle);
+        }
+
+        static void TestSquare()
+        {
+            Square square = new Square(10);
+            DisplayShape(square);
+            square.Width = 13 ;
+            DisplayShape(square);
+        }
+
+        static void TestTriangle()
+        {
+            Triangle triangle = new Triangle(10, 5);
+            DisplayShape(triangle);
+            triangle.Height = 15;
+            DisplayShape(triangle);
+        }
+
+        static void DisplayShape(GeometricFigure figure)
+        {
+            Console.WriteLine("Figure Type: " + figure.GetType().Name);
+            Console.WriteLine("Figure Width: " + figure.Width.ToString());
+            Console.WriteLine("Figure Height: " + figure.Height.ToString());
+            Console.WriteLine("Figure Area: " + figure.Area.ToString());
+            Console.WriteLine();
+            Console.ReadKey();    
+        }
+        
+        }
+}
+
